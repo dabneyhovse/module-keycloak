@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Utillity module for interacting with Dabney's Keycloak instance from node.js",
   "exports": {
-    ".": "./src/*.js"
+    ".": "./src/index.js"
   },
   "dependencies": {
     "axios": "^0.28.1"
