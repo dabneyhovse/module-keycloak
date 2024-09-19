@@ -1,4 +1,4 @@
-const mTLSAgent = require("./mTLSAgent");
+const { mTLSAgent } = require("./mTLSAgent");
 const { Axios } = require("axios");
 
 const keycloakAPI = Axios.create({
@@ -6,4 +6,4 @@ const keycloakAPI = Axios.create({
     httpsAgent: mTLSAgent,
 })
 
-module.exports = keycloakAPI;
+module.exports = { keycloakAPI };
