@@ -1,2 +1,2 @@
 # module-keycloak
-Utillity module for interacting with Dabney's Keycloak instance from node.js
+Utillity module for interacting with Keycloak's admin API over mTLS from node.js 
