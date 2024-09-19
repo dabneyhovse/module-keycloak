@@ -1,0 +1,22 @@
+{
+  "name": "module-keycloak",
+  "version": "1.0.0",
+  "description": "Utillity module for interacting with Dabney's Keycloak instance from node.js",
+  "exports": {
+    "./keycloakAPI": "./src/keycloakAPI.js",
+    "./mTLSAgent": "./src/mTLSAgent.js"
+  },
+  "dependencies": {
+    "axios": "^0.28.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dabneyhovse/module-keycloak.git"
+  },
+  "author": "Melissa Foster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dabneyhovse/module-keycloak/issues"
+  },
+  "homepage": "https://github.com/dabneyhovse/module-keycloak#readme"
+}
