@@ -1,7 +1,7 @@
 const mTLSAgent = require("./mTLSAgent");
-const { Axios } = require("axios");
+const axios = require("axios").default;
 
-const keycloakAPI = Axios.create({
+const keycloakAPI = axios.create({
     baseURL: process.env.ISSUER_BASE_URL,
     httpsAgent: mTLSAgent,
 })
