@@ -6,4 +6,4 @@ const mTLSAgent = new Agent({
   cert: readFileSync(process.env.CLIENT_CERT_PATH, "utf8"),
 });
 
-module.exports = mTLSAgent;
+module.exports = { mTLSAgent };

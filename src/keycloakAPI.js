@@ -21,4 +21,4 @@ keycloakAPI[custom.http_options] = async function(url, options) {
     };
 }
 
-module.exports = keycloakAPI;
+module.exports = { keycloakAPI };
