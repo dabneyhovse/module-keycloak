@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Utillity module for interacting with Dabney's Keycloak instance from node.js",
   "exports": {
-    ".": "./src/index.js"
+    ".": "./src/keycloakAPI.js",
+    "./mTLSAgent": "./src/mTLSAgent.js"
   },
   "dependencies": {
     "openid-client": "^5.7.0"
