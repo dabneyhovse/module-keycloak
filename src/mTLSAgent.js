@@ -1,9 +1,9 @@
-const { Agent } = require("https");
-const { readFileSync } = require("fs");
+import { Agent } from "https";
+import { readFile } from "fs/promises";
 
 const mTLSAgent = new Agent({
-  key: readFileSync(process.env.CLIENT_KEY_PATH, "utf8"),
-  cert: readFileSync(process.env.CLIENT_CERT_PATH, "utf8"),
+  key: await readFile(process.env.CLIENT_KEY_PATH, "utf8"),
+  cert: await readFile(process.env.CLIENT_CERT_PATH, "utf8"),
 });
 
-module.exports = mTLSAgent;
+export default mTLSAgent;

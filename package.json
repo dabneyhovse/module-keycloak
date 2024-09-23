@@ -2,6 +2,7 @@
   "name": "module-keycloak",
   "version": "1.0.0",
   "description": "Utillity module for interacting with Dabney's Keycloak instance from node.js",
+  "type": "module",
   "exports": {
     ".": "./src/keycloakAPI.js",
     "./mTLSAgent": "./src/mTLSAgent.js"

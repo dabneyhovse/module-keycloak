@@ -1,7 +1,6 @@
-const mTLSAgent = require("./mTLSAgent");
-const { Issuer } = require("openid-client");
-const { custom } = require("openid-client");
-const { readFile } = require("fs/promises");
+import { Issuer } from "openid-client";
+import { custom } from "openid-client";
+import { readFile } from "fs/promises";
 
 const keycloak = await Issuer.discover(process.env.ISSUER_BASE_URL);
 
@@ -11,7 +10,7 @@ const keycloakAPI = new keycloak.Client({
     token_endpoint_auth_signing_alg: "EdDSA",
     id_token_signed_response_alg: "EdDSA",
     authorization_signed_response_alg: "EdDSA",
-    tls_client_certificate_bound_access_tokens: true,
+    tls_client_certificate_bound_access_tokens: false,
 })
 
 keycloakAPI[custom.http_options] = async function(url, options) {
@@ -21,4 +20,4 @@ keycloakAPI[custom.http_options] = async function(url, options) {
     };
 }
 
-module.exports = { keycloakAPI };
+export default keycloakAPI;
