@@ -15,8 +15,8 @@ const keycloakAPI = new keycloak.Client({
 
 keycloakAPI[custom.http_options] = async function(url, options) {
     return { 
-        key: await readFile(process.env.CLIENT_KEY_PATH, "utf8"),
-        cert: await readFile(process.env.CLIENT_CERT_PATH, "utf8"),
+        key: await readFile(process.env.CLIENT_KEY_PATH, { encoding: "utf8"}),
+        cert: await readFile(process.env.CLIENT_CERT_PATH, { encoding: "utf8"}),
     };
 }
 
