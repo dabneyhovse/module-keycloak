@@ -13,7 +13,7 @@ const keycloakAPI = new keycloak.Client({
     tls_client_certificate_bound_access_tokens: false,
 })
 
-keycloakAPI[custom.http_options] = async function(url, options) {
+keycloakAPI[custom.http_options] = function(url, options) {
     return { 
         key: readFileSync(process.env.CLIENT_KEY_PATH, "utf8"),
         cert: readFileSync(process.env.CLIENT_CERT_PATH,"utf8"),
