@@ -1,6 +1,6 @@
 import { Issuer } from "openid-client";
 import { custom } from "openid-client";
-import { readFileSync } from "fs";
+import { readFile } from "fs/promises";
 
 const keycloak = await Issuer.discover(process.env.ISSUER_BASE_URL);
 
@@ -15,8 +15,8 @@ const keycloakAPI = new keycloak.Client({
 
 keycloakAPI[custom.http_options] = async function(url, options) {
     return { 
-        key: readFileSync(process.env.CLIENT_KEY_PATH, { encoding: "utf8"}),
-        cert: readFileSync(process.env.CLIENT_CERT_PATH, { encoding: "utf8"}),
+        key: await readFile(process.env.CLIENT_KEY_PATH, { encoding: "utf8"}),
+        cert: await readFile(process.env.CLIENT_CERT_PATH, { encoding: "utf8"}),
     };
 }
 
